@@ -36,6 +36,11 @@ public class Book implements Serializable {
         this.authors = authors;
     }
 
+    public Book(final String title, final String isbn, final Publisher publisher) {
+        this(title, isbn);
+        this.publisher = publisher;
+    }
+
     public Book(final String title, final String isbn, final Publisher publisher, final Set<Author> authors) {
         this(title, isbn, authors);
         this.publisher = publisher;

@@ -23,13 +23,13 @@ public class BootstrapData implements CommandLineRunner {
 
     @Override
     public void run(final String... args) throws Exception {
-        final Author bruceEckel = new Author("Bruce", "Eckel");
-        final Book thinkingInJava = new Book("Thinking in Java", "ISBN-10.0131872486");
         final Publisher prenticeHall = new Publisher("Prentice Hall", "Room Number, Hall", "Kent", "Ohio", "44243");
+        final Author bruceEckel = new Author("Bruce", "Eckel");
+        final Book thinkingInJava = new Book("Thinking in Java", "ISBN-10.0131872486", prenticeHall);
 
+        publisherRepository.save(prenticeHall);
         authorRepository.save(bruceEckel);
         bookRepository.save(thinkingInJava);
-        publisherRepository.save(prenticeHall);
 
         final Publisher manning = new Publisher("Manning", "20 Baldwin Road", "Shelter Island", "New York", "11964");
 
